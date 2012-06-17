@@ -1,0 +1,19 @@
+development:
+  adapter: mysql2
+  database: blog
+  username: root
+  password: 
+  host: localhost
+  reconnect: true
+
+test: &test
+  adapter: mysql2
+  database: blog_test
+  username: root
+  password: 
+  host: localhost
+  reconnect: true
+
+cucumber:
+  <<: *test
+

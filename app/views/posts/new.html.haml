@@ -1,0 +1,6 @@
+= form_for(Post.new)  do |f|
+  =f.label "Title"
+  =f.text_field :title, {:id => 'title'}
+  =f.label "Content"
+  =f.text_area :content, {:id => 'content'}
+  =f.submit

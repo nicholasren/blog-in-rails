@@ -1,0 +1,10 @@
+!!! 5
+%body
+  .content
+    - unless @posts.nil?
+      %ul.posts
+        - @posts.try(:each) do |post|
+          %li.post= post.title
+    - else
+      .notice= "Not post found"
+

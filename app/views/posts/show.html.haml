@@ -1,0 +1,8 @@
+%h1= Post
+- if @post.present?
+  .title= @post.title
+  .content= @post.content
+- else
+  .notice= "not found"
+
+= link_to 'View Posts',  post_index_url
