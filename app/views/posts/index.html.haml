@@ -4,7 +4,9 @@
     - unless @posts.nil?
       %ul.posts
         - @posts.try(:each) do |post|
-          %li.post= post.title
+          %li.post
+            %span.title= post.title
+            %span.content= post.content
     - else
       .notice= "Not post found"
 

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def create
     Post.create(params[:post])
+    redirect_to :posts
   end
 
   def new
@@ -9,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @post = Post.all
+    @posts = Post.all
   end
 
   def show
