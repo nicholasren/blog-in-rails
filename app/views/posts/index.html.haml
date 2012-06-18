@@ -1,12 +1,25 @@
-!!! 5
-%body
-  .content
-    - unless @posts.nil?
-      %ul.posts
-        - @posts.try(:each) do |post|
-          %li.post
-            %span.title= post.title
-            %span.content= post.content
-    - else
-      .notice= "Not post found"
+#outer-wrapper
+  #header-wrapper
+    #header
+      .header-inner
+        %h1= "Posts"
+      .description-wrapper
+        %p.description="Funny Life"
 
+  #content-wrapper
+    #main-wrapper
+      - unless @posts.nil?
+        .posts
+          - @posts.try(:each) do |post|
+            .post
+              %h3.title= post.title
+              .post-header
+                .post-header-line-1
+                  %span.post-author= "Nicholas Ren"
+              .post-body
+                .summary= post.content
+        - else
+          .notice= "Not post found"
+  #sidebar-wrapper
+    .search
+      %h2= "Search"

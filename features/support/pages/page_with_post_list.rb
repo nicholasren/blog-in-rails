@@ -2,10 +2,10 @@ module PageWithPostList
   include Gizmo::PageMixin
 
   def posts
-    page.all(".posts ul li")[1..-1].collect do |item|
+    page.all(".post").collect do |item|
       {
         :title => item.find(".title").text,
-        :content => item.find(".content").text
+        :content => item.find(".summary").text
       }
     end
   end

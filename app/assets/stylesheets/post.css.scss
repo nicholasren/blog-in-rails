@@ -1,3 +1,141 @@
 // Place all the styles related to the post controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background:#fefefe url(http://4.bp.blogspot.com/-9ln9W03AWq0/T8BAmo5PYiI/AAAAAAAABKw/obR5v9BYzWg/s000/imgbgbw.jpg) repeat left top;
+  color:#212121;
+  font:13px Arial, Helvetica, sans-serif;
+  text-align:center;
+  margin:0;
+  padding:0;
+}
+
+a:link {
+  color:gray;
+  text-decoration:none;
+}
+
+.fields {
+  margin-bottom: 10px
+}
+
+//Header
+#header-wrapper {
+  height:130px;
+  width:900px;
+  margin:0 auto;
+}
+
+#header-inner {
+  background-position:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#header {
+  background:url(http://2.bp.blogspot.com/-4H6fTOr8LhQ/T8BAm2CzXkI/AAAAAAAABK4/uQGV7vY33WE/s000/imghead.gif) no-repeat left 100%;
+  float:left;
+  padding-left:50px;
+}
+
+#header h1 {
+  line-height:normal;
+  font-weight:400;
+  color:#393939;
+  margin:0;
+  padding:25px 0 0;
+}
+
+#header .description {
+  padding-left:3px;
+  line-height:normal;
+  font-weight:400;
+  color:#393939;
+  margin:0;
+}
+
+#header img {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+//Content
+#outer-wrapper {
+  text-align:left;
+  width:900px;
+  margin:0 auto;
+  padding:30px 0;
+}
+
+#content-wrapper {
+  background:#fff;
+  width:100%;
+  margin:5px;
+  padding:0;
+}
+
+#main-wrapper {
+  float:left;
+  width:570px;
+  word-wrap:break-word;
+  overflow:hidden;
+}
+
+.sidebar-wrapper {
+  float:right;
+  width:300px;
+  word-wrap:break-word;
+  overflow:hidden;
+}
+
+.post {
+  margin:0 0 30px;
+}
+
+.post h3 {
+  border-bottom:#BFC9AE dashed 1px;
+  color:#232F01;
+  margin:0;
+  padding:10px 0 5px;
+}
+
+.post h3 a,.post h3 a:visited,.post h3 strong {
+  display:block;
+  text-decoration:none;
+  color:#232F01;
+  font-weight:400;
+}
+
+.post h3 strong,.post h3 a:hover {
+  color:#232F01;
+}
+
+.post-body {
+  text-align:justify;
+  line-height:1.6em;
+  margin:2em 0 .5em;
+}
+
+.post ul {
+  list-style-type:circle;
+  font-size:95%;
+  margin:2.5em;
+}
+
+.post ol {
+  font-size:95%;
+  margin:0;
+}
+
+.post li {
+  margin:0;
+  padding:0 0 8px;
+}
+
+.post-header-line-1 {
+  color:#5E5E5E;
+  font-size:10px;
+  line-height:160%;
+  margin:0;
+}
+

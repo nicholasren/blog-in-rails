@@ -6,6 +6,8 @@
 
 require 'cucumber/rails'
 require 'gizmo'
+require 'capybara/cucumber'
+
 
 World(Gizmo::Helpers)
 
@@ -14,6 +16,16 @@ World(Gizmo::Helpers)
 # prefer to use XPath just remove this line and adjust any selectors in your
 # steps to use the XPath syntax.
 Capybara.default_selector = :css
+Capybara.default_wait_time = 25
+Capybara.server_boot_timeout = 50
+Capybara.javascript_driver = :selenium
+
+module Capybara
+  module DSL
+    alias :response :page
+  end
+end
+
 
 # By default, any exception happening in your Rails application will bubble up
 # to Cucumber so that your scenario will fail. This is a different from how 
