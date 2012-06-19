@@ -13,6 +13,6 @@ end
 
 Then /^the created blog should be shown on blog list page$/ do
   on_page_with :post_list do |page|
-    page.posts.any? {|post| post[:title] == @created_post.title && post[:content] == @created_post.content}.should be_true
+    page.has_post?(@created_post).should be_true
   end
 end
