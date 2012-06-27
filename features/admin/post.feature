@@ -6,3 +6,8 @@ Feature: As a blogger, I want to manage my posts
       | title   | my first blog                     |
       | content | I will tell you a long long story |
     Then the created blog should be shown on blog list page
+
+  Scenario: delete post
+    Given the blogger has a post with the following details:
+      |title | how to be a vimer|
+      |content| vim is the greated editor I ever used|

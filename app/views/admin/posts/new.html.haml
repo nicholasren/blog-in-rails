@@ -1,5 +1,5 @@
 %h2= "New Post"
-= form_for(Post.new)  do |f|
+= form_for([:admin, Post.new])  do |f|
   .fields
     =f.label "Title"
     =f.text_field :title, {:id => 'title'}

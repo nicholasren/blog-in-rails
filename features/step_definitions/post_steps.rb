@@ -1,5 +1,5 @@
 Given /^the blogger is on creating post page$/ do
-  visit new_post_path
+  visit new_admin_post_path
 end
 
 When /^the blogger create blog with the following detail:$/ do |detail|
@@ -12,7 +12,12 @@ When /^the blogger create blog with the following detail:$/ do |detail|
 end
 
 Then /^the created blog should be shown on blog list page$/ do
+  visit posts_path
   on_page_with :post_list do |page|
     page.has_post?(@created_post).should be_true
   end
+end
+
+Given /^the blogger has a post with the following details:$/ do |attributes|
+  Post.create(attributes.rows_hash) 
 end
