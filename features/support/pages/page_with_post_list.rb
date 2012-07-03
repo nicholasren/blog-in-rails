@@ -11,6 +11,6 @@ module PageWithPostList
   end
 
   def has_post? post
-    posts.any? {|item|item[:title] == post.title && item[:content] == post.content}
+    !post.nil? && posts.any? {|item|item[:title] == post.title && item[:content] == post.content}
   end
 end

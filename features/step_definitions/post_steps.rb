@@ -19,5 +19,21 @@ Then /^the created blog should be shown on blog list page$/ do
 end
 
 Given /^the blogger has a post with the following details:$/ do |attributes|
-  Post.create(attributes.rows_hash) 
+  @created_post = Post.create(attributes.rows_hash) 
 end
+
+When /^the blogger delete the blog with title "(.*?)"$/ do |title|
+  visit admin_posts_path
+  on_page_with :admin_post_list do |page|
+    post = Post.find_by_title title
+    page.delete post
+  end
+end
+
+Then /^there will not be a post with title "(.*?)" on blog list page$/ do |title|
+  visit posts_path
+  on_page_with :post_list do |page|
+    page.has_post?(@created_post).should be_false
+  end
+end
+

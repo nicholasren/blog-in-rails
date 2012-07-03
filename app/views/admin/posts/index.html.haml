@@ -1,12 +1,8 @@
 - unless @posts.nil?
   .posts
     - @posts.try(:each) do |post|
-      .post
+      .post{:id => post.id}
         %h3.title= post.title
-        .post-header
-          .post-header-line-1
-            %span.post-author= "Nicholas Ren"
-        .post-body
-          .summary= post.content
+        =link_to "Delete", admin_post_path(post), :class => "delete", :method => :delete
 - else
   .notice= "Not post found"
