@@ -1,4 +1,6 @@
 - unless @posts.nil?
+  .create
+    =link_to "Create", new_admin_post_path, :class => "create_post"
   .posts
     - @posts.try(:each) do |post|
       .post{:id => post.id}
