@@ -71,6 +71,7 @@ a:link {
   width:100%;
   margin:5px;
   padding:0;
+
 }
 
 #main-wrapper {
@@ -78,6 +79,9 @@ a:link {
   width:570px;
   word-wrap:break-word;
   overflow:hidden;
+  .delete {
+    float: right;
+  }
 }
 
 .sidebar-wrapper {
