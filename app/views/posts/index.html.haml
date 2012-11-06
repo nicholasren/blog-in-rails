@@ -15,8 +15,6 @@
           - @posts.try(:each) do |post|
             .post
               %h3.title= post.title
-              %delete
-              =link_to "Delete", admin_post_path(post), :class => "delete", :method => :delete
               .post-header
                 .post-header-line-1
                   %span.post-author= "Nicholas Ren"
