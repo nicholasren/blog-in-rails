@@ -9,6 +9,8 @@ gem "haml-rails"
 gem "mysql2"
 gem "gizmo"
 gem "term-ansicolor"
+gem "hpricot"
+
 
 
 # Gems used only for assets and not required
@@ -24,9 +26,13 @@ gem 'uglifier', '>= 1.0.3'
 end
 
 group :test do
-  gem 'cucumber-rails'
   gem 'database_cleaner'
   gem "rspec-rails", "~> 2.0"
+  gem "capybara"
+  gem "gizmo"
+  gem "cucumber"
+  gem "cucumber-rails"
+  gem "launchy"
 end
 
 group :development do
