@@ -11,11 +11,17 @@ describe "posts", :type => :request, :js => true do
     blog_attributes = {"title" => "my first blog", "content" => "I will tell you a long long story"}
 
     visit new_admin_post_path
+<<<<<<< HEAD
 
     blog_attributes.each do |key, value|
       fill_in(key, :with => value)
     end
 
+=======
+    blog_attributes.each do |key, value|
+      fill_in(key, :with => value)
+    end
+>>>>>>> add integration test
     page.find("input[type='submit']").click()
 
     visit posts_path
