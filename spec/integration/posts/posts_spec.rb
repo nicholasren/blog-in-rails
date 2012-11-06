@@ -11,27 +11,14 @@ describe "posts", :type => :request, :js => true do
     blog_attributes = {"title" => "my first blog", "content" => "I will tell you a long long story"}
 
     visit new_admin_post_path
-<<<<<<< HEAD
-
     blog_attributes.each do |key, value|
       fill_in(key, :with => value)
     end
-
-=======
-    blog_attributes.each do |key, value|
-      fill_in(key, :with => value)
-    end
->>>>>>> add integration test
     page.find("input[type='submit']").click()
 
     visit posts_path
     on_page_with :post_list do |page|
       page.has_post?(Post.new(blog_attributes)).should be_true
     end
-  end
-
-  def save_and_open_page
-    require 'capybara/util/save_and_open_page'
-    Capybara.save_and_open_page(body)
   end
 end

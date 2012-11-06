@@ -12,7 +12,6 @@ require 'gizmo'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
-  include GizmoCrutchMethods
   include Gizmo::Helpers
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
@@ -23,4 +22,15 @@ end
 Gizmo.configure do |config|
     # this is just so we can use the same page mixins as the cucumber tests
     config.mixin_dir = File.join(File.dirname(__FILE__), '../features/support/pages/')
+end
+
+Capybara.default_selector = :css
+Capybara.default_wait_time = 25
+Capybara.server_boot_timeout = 50
+Capybara.javascript_driver = :selenium
+
+module Capybara
+  module DSL
+    alias :response :page
+  end
 end
