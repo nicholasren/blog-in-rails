@@ -8,17 +8,16 @@ describe "posts", :type => :request, :js => true do
   end
 
   it "could create post" do
-    blog_attributes = {"title" => "my first blog", "content" => "I will tell you a long long story"}
+    post_attributes = {"title" => "my first blog", "content" => "I will tell you a long long story"}
 
     visit new_admin_post_path
-    blog_attributes.each do |key, value|
-      fill_in(key, :with => value)
+    on_page_with :create_post do |page|
+      page.create post_attributes 
     end
-    page.find("input[type='submit']").click()
 
     visit posts_path
     on_page_with :post_list do |page|
-      page.has_post?(Post.new(blog_attributes)).should be_true
+      page.has_post?(Post.new(post_attributes)).should be_true
     end
   end
 end
