@@ -5,6 +5,7 @@
     - @posts.try(:each) do |post|
       .post{:id => post.id}
         %h3.title= post.title
+        =link_to "Edit", admin_post_edit_path(post), :class => "edit", :method => :edit
         =link_to "Delete", admin_post_path(post), :class => "delete", :method => :delete
 - else
   .notice= "Not post found"

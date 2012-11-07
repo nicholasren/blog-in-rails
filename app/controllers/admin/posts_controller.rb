@@ -9,6 +9,15 @@ class Admin::PostsController < ApplicationController
 
   end
 
+  def edit
+    @post = Post.find(params[:post_id])
+  end
+
+  def update
+    Post.find(params[:id]).update_attributes(params[:post])
+    redirect_to :admin_posts
+  end
+
   def index
     @posts = Post.all
   end
