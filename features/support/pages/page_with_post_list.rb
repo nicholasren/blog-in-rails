@@ -4,8 +4,8 @@ module PageWithPostList
   def posts
     page.all(".post").collect do |item|
       {
-        :title => item.find(".title").text,
-        :content => item.find(".summary").text
+        :title => item.find("h3").text,
+        :content => item.find("p").text
       }
     end
   end

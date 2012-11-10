@@ -1,0 +1,14 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-inner
+    .container
+      %a.btn.btn-navbar
+        %span.icon-bar
+      =link_to "Blog on Rails", "/", :class => 'brand'
+      .nav-collapse
+        %ul.nav
+          %li.active
+            =link_to "首页", "/"
+          %li
+            =link_to "关于", "/"
+          %li
+            =link_to "联系", "/"

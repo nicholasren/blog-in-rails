@@ -31,7 +31,7 @@ group :test do
   gem "capybara"
   gem "gizmo"
   gem "cucumber"
-  gem "cucumber-rails"
+  gem "cucumber-rails", :require => false
   gem "launchy"
 end
 

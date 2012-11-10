@@ -1,9 +1,10 @@
-%h2= "New Post"
-= form_for([:admin, Post.new])  do |f|
-  .fields
-    =f.label "Title"
-    =f.text_field :title, {:id => 'title'}
-  .fields
-    =f.label "Content"
-    =f.text_area :content, {:id => 'content'}
-  =f.submit
+.container
+  %h2= "New Post"
+  = form_for([:admin, Post.new])  do |f|
+    .fields
+      =f.label "Title"
+      =f.text_field :title, {:id => 'title'}
+    .fields
+      =f.label "Content"
+      =f.text_area :content, {:id => 'content'}
+    =f.submit

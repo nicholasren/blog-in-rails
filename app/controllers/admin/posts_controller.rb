@@ -1,4 +1,5 @@
 class Admin::PostsController < ApplicationController
+  layout "admin"
 
   def create
     Post.create(params[:post])

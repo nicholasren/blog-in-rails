@@ -4,7 +4,7 @@ describe "posts", :type => :request, :js => true do
 
   it "should show post list" do
     visit posts_path
-    page.should have_selector(".header-inner", :text => "Posts")
+    page.should have_selector(".brand", :text => "Blog on Rails")
   end
 
   it "could create post" do

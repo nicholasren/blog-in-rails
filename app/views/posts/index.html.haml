@@ -1,25 +1,8 @@
-#outer-wrapper
-  #header-wrapper
-    #header
-      .header-inner
-        %h1= "Posts"
-      .description-wrapper
-        %p.description="Funny Life"
-
-  #content-wrapper
-    #main-wrapper
-      - unless @posts.nil?
-        .posts
-          - @posts.try(:each) do |post|
-            .post
-              %h3.title= post.title
-              .post-header
-                .post-header-line-1
-                  %span.post-author= "Nicholas Ren"
-              .post-body
-                .summary= post.content
-        - else
-          .notice= "Not post found"
-  #sidebar-wrapper
-    .search
-      %h2= ""
+.container
+  - unless @posts.nil?
+    - @posts.try(:each) do |post|
+      .post
+        %h3= post.title
+        %p= post.content
+  - else
+    .notice= "Not post found"
