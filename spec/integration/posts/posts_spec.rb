@@ -3,9 +3,8 @@ require 'spec_helper'
 describe "posts", :type => :request, :js => true do
 
   after (:each) do
-    @posts = Post.all
     visit admin_posts_path
-    @posts.each do |post|
+    @posts = Post.find_each do |post|
       on_page_with :admin_post_list do |page|
         page.delete post
       end
