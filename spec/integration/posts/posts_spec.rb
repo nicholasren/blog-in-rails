@@ -1,14 +1,10 @@
 require 'spec_helper'
+require 'database_cleaner'
 
 describe "posts", :type => :request, :js => true do
 
   after (:each) do
-    visit admin_posts_path
-    @posts = Post.find_each do |post|
-      on_page_with :admin_post_list do |page|
-        page.delete post
-      end
-    end
+    DatabaseCleaner.clean
   end
 
   it "should show post list" do
@@ -37,11 +33,14 @@ describe "posts", :type => :request, :js => true do
     on_page_with :create_post do |page|
       page.create post_attributes
     end
+    test_created_time = Time.new
 
     test_post = Post.find_by_title("my test post")
     visit "/posts/#{test_post.id}"
     on_page_with :post_detail do |page|
+      page.has_title?("my test post").should be_true
       page.has_content?("This is content of the test post").should be_true
+      page.created_between?(test_created_time.ago(5), test_created_time.ago(-5)).should be_true
     end
   end
 end
