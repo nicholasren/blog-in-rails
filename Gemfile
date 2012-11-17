@@ -26,7 +26,7 @@ group :assets do
 end
 
 group :test do
-  gem 'database_cleaner'
+  gem "factory_girl_rails", "~> 4.1.0"
   gem "rspec-rails", "~> 2.0"
   gem "capybara"
   gem "gizmo"
