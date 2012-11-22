@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#source 'http://ruby.taobao.org'  this host is very useful when rubygems.org is not accessable in Chain :(
 
 gem 'rails', '3.2.3'
 
@@ -34,6 +35,7 @@ group :test do
   gem "cucumber-rails", :require => false
   gem "launchy"
   gem "database_cleaner"
+  gem 'spork', '~> 1.0rc'
 end
 
 group :development do
