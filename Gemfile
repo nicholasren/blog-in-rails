@@ -12,6 +12,7 @@ gem "gizmo"
 gem "term-ansicolor"
 gem "hpricot"
 gem 'jquery-rails'
+gem 'newrelic_rpm'
 
 
 # Gems used only for assets and not required
