@@ -1,9 +1,3 @@
-%h2= "Edit Post"
-= form_for([:admin, @post])  do |f|
-  .fields
-    =f.label "Title"
-    =f.text_field :title, {:id => 'title'}
-  .fields
-    =f.label "Content"
-    =f.text_area :content, {:id => 'content'}
-  =f.submit
+.container
+  %h2= "Edit Post"
+  =render "form"

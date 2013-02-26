@@ -1,0 +1,8 @@
+= form_for([:admin, @post.nil? ? Post.new : @post])  do |f|
+  .fields
+    =f.label "Title", {:class => "text-left"}
+    =f.text_field :title, {:id => 'title', :class => "span12"}
+  .fields
+    =f.label "Content"
+    =f.text_area :content, {:id => 'content', :class => "span12"}
+  =f.submit "Update", {:class => 'btn'}
