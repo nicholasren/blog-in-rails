@@ -4,6 +4,16 @@ require 'database_cleaner'
 
 describe Post do
 
+  context "save" do
+    it "should save long text successfully" do
+      @post = FactoryGirl.create(:post)
+      long_text = "long text " * 100
+      @post.content = long_text 
+      @post.save
+      @post.reload.content.should == long_text
+    end
+  end
+  
   context "Validator must verify that Post " do
     before(:each) do
       @post = FactoryGirl.create(:post)
@@ -32,6 +42,7 @@ describe Post do
       @post.should_not be_valid
     end
   end
+
   it "should lock optimistically" do
     p1 = FactoryGirl.create(:post)
     p2 = Post.find(p1.id)
@@ -42,4 +53,5 @@ describe Post do
     p1.save.should be_true
     expect{p2.save}.to raise_error(ActiveRecord::StaleObjectError)
   end
+
 end

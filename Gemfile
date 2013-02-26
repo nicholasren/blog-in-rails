@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-#source 'http://ruby.taobao.org'  this host is very useful when rubygems.org is not accessable in Chain :(
+#source 'https://rubygems.org'
+source 'http://ruby.taobao.org'  #this host is very useful when rubygems.org is not accessable in China :(
 
 gem 'rails', '3.2.3'
 
@@ -37,10 +37,12 @@ group :test do
   gem "launchy"
   gem "database_cleaner"
   gem 'spork', '~> 1.0rc'
+  gem 'pry'
 end
 
 group :development do
   gem "rspec-rails", "~> 2.0"
+  gem 'pry'
 end
 
 # To use ActiveModel has_secure_password

@@ -8,6 +8,8 @@ require 'capybara/rspec'
 require 'gizmo'
 require 'database_cleaner'
 require 'spork'
+require 'pry'
+
 
 Spork.prefork do
   Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
@@ -30,6 +32,7 @@ Spork.prefork do
     config.after(:each) do
       DatabaseCleaner.clean
     end
+    config.include Capybara::DSL
   end
 
   Gizmo.configure do |config|
@@ -37,8 +40,6 @@ Spork.prefork do
   end
 
   Capybara.default_selector = :css
-  Capybara.default_wait_time = 25
-  Capybara.server_boot_timeout = 50
   Capybara.javascript_driver = :selenium
 
   module Capybara
