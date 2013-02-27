@@ -1,8 +1,8 @@
-As a blogger I want be able to create post
-As a blogger I want be able to delete my post
-As a blogger I want be able to edit my post
-As a blogger I want be able to add rich text on my post
-As a reader I want be able to see all posts
-As a reader I want be able to see post details
-As a reader I want be able to add comment for a post
-As a reader I want be able to see comments belongs to a post
+DONE  As a blogger I want be able to create post   
+DONE  As a blogger I want be able to delete my post
+      As a blogger I want be able to edit my post
+      As a blogger I want be able to add rich text on my post
+      As a reader I want be able to see all posts
+      As a reader I want be able to see post details
+      As a reader I want be able to add comment for a post
+      As a reader I want be able to see comments belongs to a post

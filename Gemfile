@@ -40,9 +40,11 @@ group :test do
   gem "database_cleaner"
   gem 'spork', '~> 1.0rc'
   gem 'pry'
+  gem 'jasmine'
 end
 
 group :development do
   gem "rspec-rails", "~> 2.0"
   gem 'pry'
+  gem 'jasmine'
 end
