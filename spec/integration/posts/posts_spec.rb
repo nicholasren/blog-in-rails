@@ -16,7 +16,7 @@ describe "posts", :type => :request, :js => true do
 
     visit new_admin_post_path
     on_page_with :create_post do |page|
-      page.create post_attributes 
+      page.create post_attributes
     end
 
     visit posts_path
@@ -27,7 +27,6 @@ describe "posts", :type => :request, :js => true do
 
   it "should view details of a created post" do
     post_attributes = {"title" => "my test post", "content" => "This is content of the test post"}
-
     visit new_admin_post_path
     on_page_with :create_post do |page|
       page.create post_attributes
