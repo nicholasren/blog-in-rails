@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20130226104119) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.float    "length"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.integer  "lock_version", :default => 0
